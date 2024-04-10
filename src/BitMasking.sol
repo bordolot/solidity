@@ -10,4 +10,10 @@ contract EVMStoragePackedSlotBytes {
     bytes2 b2 = 0xcdcd;
     //0x0000000000000000000000000000000000000000000000000000cdcdabababab
     //0xffffffffffffffffffffffffffffffffffffffffffffffffffff0000ffffffff
+
+    function get() public view returns (bytes32 b32) {
+        assembly {
+            b32 := sload(0)
+        }
+    }
 }
